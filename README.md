@@ -1,5 +1,5 @@
 # CenterNet suitable for 2080ti with pytorch 1.x
-[Original lab here](https://github.com/xingyizhou/CenterNet)
+[Original lab here](https://github.com/xingyizhou/CenterNet)  
 Already tested environment:
 1. Ubuntu 18.04
 2. Conda python3.7
@@ -13,9 +13,10 @@ When tring to run code in 2080ti(cuda10.2,pytroch:1.2.1),I found that we can not
 ### Create a virtual environment using conda
 Note: If you do not have conda , you should install conda first.  
 
-conda create --name CenterNet3.7 --python=3.7  
+conda create --name CenterNet3.7 --python=3.7   
 conda activate CenterNet3.7  
 conda install pytorch torchvision -c pytorch  
+
 
 ### Clone official CenterNet code
 git clone https://github.com/xingyizhou/CenterNet  
@@ -33,7 +34,7 @@ python setup.py build_ext --inplace
 
 ## Clone and build original DCN2
 uncomment following code in CenterNet\src\lib\models\networks\DCNv2\src\cuda\dcn_v2_cuda.cu  
-**Steps:**
+**Steps:**  
 cd CenterNet\src\lib\models\networks  
 rm -rf DCNv2  
 git clone https://github.com/CharlesShang/DCNv2  
