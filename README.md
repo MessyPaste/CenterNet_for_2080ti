@@ -10,19 +10,19 @@ Already tested environment:
 When tring to run code in 2080ti(cuda10.2,pytroch:1.2.1),I found that we can not  run CenterNet in 2080ti directly with pytorch 0.4.x. I found some reference but there are some errors in them.I fix them.You can follow my steps as following or you can use the code directly.
 
 ## Steps
-###Create a virtual environment using conda
+### Create a virtual environment using conda
 Note: If you do not have conda , you should install conda first.
 
 conda create --name CenterNet3.7 --python=3.7
 conda activate CenterNet3.7
 conda install pytorch torchvision -c pytorch
 
-###Clone official CenterNet code
+### Clone official CenterNet code
 git clone https://github.com/xingyizhou/CenterNet
 cd CenterNet/src
 pip install -r requirements.txt
 
-##Build NMS
+## Build NMS
 uncomment following code in CenterNet\src\lib\external\setup.py
 ```
 #extra_compile_args=["-Wno-cpp", "-Wno-unused-function"]
@@ -31,7 +31,7 @@ cd CenterNet\src\lib\external
 python setup.py install
 python setup.py build_ext --inplace
 
-##Clone and build original DCN2
+## Clone and build original DCN2
 uncomment following code in CenterNet\src\lib\models\networks\DCNv2\src\cuda\dcn_v2_cuda.cu
 **Steps:**
 cd CenterNet\src\lib\models\networks
@@ -46,14 +46,14 @@ Then uncomment the following code:
 ```
 python setup.py build develop
 
-##Install COCOAPI
+## Install COCOAPI
 export COCOAPI=/path/to/clone/cocoapi
 git clone https://github.com/cocodataset/cocoapi.git $COCOAPI
 cd $COCOAPI/PythonAPI
 make
 python setup.py install --user
 
-##Reference
+## Reference
 Thanks:
 [xingyizhou/CenterNet/issues/7](https://github.com/xingyizhou/CenterNet/issues/7)
 [CenterNet INSTALL](https://github.com/xingyizhou/CenterNet/blob/master/readme/INSTALL.md)
