@@ -6,7 +6,9 @@ Already tested environment:
 2. Conda python3.7
 3. cuda 10.2
 4. nvidia rtx2080ti
-5. latest pytorch(1.2.1)
+5. pytorch(1.2.1)
+
+[Warning] pytorch with latest version: 1.5 failed with DCN compiling. DO NOT USE.
 
 When tring to run code in 2080ti(cuda10.2,pytroch:1.2.1),I found that we can not  run CenterNet in 2080ti directly with pytorch 0.4.x. I found some reference but there are some errors in them.I fix them.You can follow my steps as following or you can use the code directly.
 
